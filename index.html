@@ -11,7 +11,7 @@
     <meta property="og:title" content="BotForge AI - Создавай Telegram ботов с AI">
     <meta property="og:description" content="AI-ассистент напишет код за тебя. Визуальный редактор покажет результат. Автоматический деплой запустит бота за минуты.">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale"  content="ru_RU">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
@@ -31,19 +31,23 @@
     <header class="header" role="banner">
         <div class="header__container">
             <div class="header__brand">
-                <a href="#" class="header__logo" aria-label="BotForge AI - На главную">BotForge AI</a>
+                <a href="#" class="header__logo" aria-label="BotForge AI - На главную">
+                    <span class="header__logo-icon">🤖</span>
+                    <span class="header__logo-text">BotForge AI</span>
+                </a>
                 <span class="header__tagline">by techaitima</span>
             </div>
             
             <nav class="header__nav" role="navigation" aria-label="Основная навигация">
                 <ul class="header__nav-list">
-                    <li><a href="#features" class="header__nav-link">Возможности</a></li>
-                    <li><a href="#pricing" class="header__nav-link">Цены</a></li>
-                    <li><a href="#signup" class="header__nav-link">Контакты</a></li>
+                    <li><a href="pages/features.html" class="header__nav-link">Возможности</a></li>
+                    <li><a href="#how-it-works" class="header__nav-link">Как это работает</a></li>
+                    <li><a href="pages/pricing.html" class="header__nav-link">Цены</a></li>
+                    <li><a href="pages/contact.html" class="header__nav-link">Контакты</a></li>
                 </ul>
             </nav>
             
-            <a href="#signup" class="btn btn--primary header__cta">Попробовать бесплатно</a>
+            <a href="#pricing" class="btn btn--primary header__cta">Попробовать за 100₽</a>
             
             <button class="header__menu-btn" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
                 <span></span>
@@ -80,20 +84,10 @@
                     <p class="hero__subheadline">
                         AI-ассистент напишет код за тебя. Визуальный редактор покажет результат. Автоматический деплой запустит бота за минуты
                     </p>
-                    <form class="hero__form form-group form-group--inline" id="hero-form" novalidate>
-                        <label for="hero-email" class="visually-hidden">Ваш email</label>
-                        <input 
-                            type="email" 
-                            id="hero-email" 
-                            name="email" 
-                            class="input" 
-                            placeholder="Ваш email" 
-                            required
-                            autocomplete="email"
-                        >
-                        <button type="submit" class="btn btn--accent">Получить ранний доступ</button>
-                    </form>
-                    <div class="form-message" id="hero-form-message" aria-live="polite"></div>
+                    <div class="hero__cta">
+                        <a href="#pricing" class="btn btn--accent btn--large">Начать</a>
+                        <p class="hero__bonus-text">Получите +50₽ бонус при первом пополнении</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -143,18 +137,18 @@
                 <div class="steps">
                     <div class="step animate-on-scroll">
                         <div class="step__number">1</div>
-                        <h3 class="step__title">Опиши своего бота</h3>
-                        <p class="step__description">Расскажи AI что должен делать бот</p>
+                        <h3 class="step__title">Пополняете баланс</h3>
+                        <p class="step__description">На сайте: карты (RU/зарубеж), СБП, крипта</p>
                     </div>
                     <div class="step animate-on-scroll">
                         <div class="step__number">2</div>
-                        <h3 class="step__title">Настрой интерфейс</h3>
-                        <p class="step__description">Добавь кнопки и команды в визуальном редакторе</p>
+                        <h3 class="step__title">Выбираете модель AI</h3>
+                        <p class="step__description">Sonnet (2₽) или Opus (4₽)</p>
                     </div>
                     <div class="step animate-on-scroll">
                         <div class="step__number">3</div>
-                        <h3 class="step__title">Запусти за 1 клик</h3>
-                        <p class="step__description">Бот сразу доступен пользователям в Telegram</p>
+                        <h3 class="step__title">AI списывает с баланса</h3>
+                        <p class="step__description">За каждый запрос к боту</p>
                     </div>
                 </div>
             </div>
@@ -167,31 +161,107 @@
             <div class="container">
                 <header class="pricing__header animate-on-scroll">
                     <h2 id="pricing-headline">Тарифы</h2>
+                    <p class="pricing__subtitle">Платите только за использование. Без подписок.</p>
                 </header>
+                
+                <div class="pricing__models-info animate-on-scroll">
+                    <h3 class="pricing__models-title">💡 Два уровня AI на выбор:</h3>
+                    <ul class="pricing__models-list">
+                        <li><strong>Sonnet 4.5</strong> (быстрая модель) — 2₽ за запрос</li>
+                        <li><strong>Opus 4.5</strong> (продвинутая модель) — 4₽ за запрос</li>
+                    </ul>
+                </div>
+                
                 <div class="pricing__grid">
                     <article class="pricing-card animate-on-scroll">
-                        <div class="pricing-card__price">Бесплатно</div>
-                        <div class="pricing-card__period">первый месяц</div>
+                        <div class="pricing-card__icon">🎯</div>
+                        <h3 class="pricing-card__title">Стартовый</h3>
+                        <div class="pricing-card__price">100₽</div>
+                        <p class="pricing-card__description">Попробуйте платформу</p>
                         <ul class="pricing-card__features">
+                            <li>50₽ бонус на старте</li>
                             <li>1 бот</li>
-                            <li>Базовые функции</li>
-                            <li>AI-помощник</li>
-                            <li>Техническая поддержка</li>
+                            <li>~75 Sonnet запросов (150₽ / 2₽)</li>
+                            <li>~37 Opus запросов (150₽ / 4₽)</li>
+                            <li>Базовая поддержка</li>
                         </ul>
-                        <a href="#signup" class="btn btn--primary">Начать бесплатно</a>
+                        <a href="#signup" class="btn btn--primary">Начать</a>
                     </article>
+                    
                     <article class="pricing-card pricing-card--featured animate-on-scroll">
-                        <span class="pricing-card__badge">Популярный</span>
-                        <div class="pricing-card__price">$9.99</div>
-                        <div class="pricing-card__period">в месяц</div>
+                        <span class="pricing-card__badge">ПОПУЛЯРНЫЙ</span>
+                        <div class="pricing-card__icon">🚀</div>
+                        <h3 class="pricing-card__title">Стандартный</h3>
+                        <div class="pricing-card__price">500₽</div>
+                        <p class="pricing-card__description">Для активного использования</p>
                         <ul class="pricing-card__features">
-                            <li>Неограниченно ботов</li>
+                            <li>100₽ бонус на старте</li>
+                            <li>До 3 ботов</li>
+                            <li>~300 Sonnet запросов (600₽ / 2₽)</li>
+                            <li>~150 Opus запросов (600₽ / 4₽)</li>
                             <li>Приоритетная поддержка</li>
-                            <li>Встроенный хостинг</li>
-                            <li>Расширенная аналитика</li>
                         </ul>
-                        <a href="#signup" class="btn btn--accent">Выбрать Pro</a>
+                        <a href="#signup" class="btn btn--accent">Начать</a>
                     </article>
+                    
+                    <article class="pricing-card animate-on-scroll">
+                        <div class="pricing-card__icon">💎</div>
+                        <h3 class="pricing-card__title">Профессиональный</h3>
+                        <div class="pricing-card__price">1000₽+</div>
+                        <p class="pricing-card__description">Для серьёзных проектов</p>
+                        <ul class="pricing-card__features">
+                            <li>200₽ бонус на старте</li>
+                            <li>Безлимит ботов</li>
+                            <li>~600 Sonnet запросов (1200₽ / 2₽)</li>
+                            <li>~300 Opus запросов (1200₽ / 4₽)</li>
+                            <li>Можно пополнять баланс</li>
+                            <li>VIP поддержка</li>
+                        </ul>
+                        <a href="#signup" class="btn btn--primary">Начать</a>
+                    </article>
+                </div>
+                
+                <div class="pricing__comparison animate-on-scroll">
+                    <h3 class="pricing__comparison-title">Сравнение моделей:</h3>
+                    <div class="pricing__table-wrapper">
+                        <table class="pricing__table">
+                            <thead>
+                                <tr>
+                                    <th>Модель</th>
+                                    <th>Скорость</th>
+                                    <th>Качество</th>
+                                    <th>Цена</th>
+                                    <th>Когда использовать</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sonnet 4.5</strong></td>
+                                    <td>⚡ Быстро</td>
+                                    <td>✅ Хорошо</td>
+                                    <td>2₽</td>
+                                    <td>Простые боты, FAQ</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Opus 4.5</strong></td>
+                                    <td>🐢 Средне</td>
+                                    <td>🌟 Отлично</td>
+                                    <td>4₽</td>
+                                    <td>Сложная логика</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="pricing__info animate-on-scroll">
+                    <h3 class="pricing__info-title">💡 Как это работает:</h3>
+                    <ul class="pricing__info-list">
+                        <li>Пополняете баланс на любую сумму</li>
+                        <li>Выбираете модель AI: Sonnet (2₽) или Opus (4₽)</li>
+                        <li>AI списывает с баланса за каждый запрос</li>
+                        <li>Закончился баланс → пополните снова</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -203,24 +273,14 @@
             <div class="container">
                 <div class="signup__content animate-on-scroll">
                     <h2 id="signup-headline" class="signup__headline">
-                        Начни создавать ботов уже сегодня
+                        Начните создавать ботов с AI
                     </h2>
-                    <form class="signup__form form-group form-group--inline" id="signup-form" novalidate>
-                        <label for="signup-email" class="visually-hidden">Ваш email</label>
-                        <input 
-                            type="email" 
-                            id="signup-email" 
-                            name="email" 
-                            class="input" 
-                            placeholder="Ваш email" 
-                            required
-                            autocomplete="email"
-                        >
-                        <button type="submit" class="btn btn--accent">Получить доступ</button>
-                    </form>
-                    <div class="form-message" id="signup-form-message" aria-live="polite"></div>
-                    <p class="signup__privacy">
-                        Мы не передаём данные третьим лицам
+                    <p class="signup__subtitle">
+                        Пополните баланс на 100₽ и получите 50₽ бонус
+                    </p>
+                    <a href="#pricing" class="btn btn--accent btn--large">Пополнить баланс</a>
+                    <p class="signup__note">
+                        Первое пополнение с бонусом
                     </p>
                 </div>
             </div>
@@ -236,13 +296,14 @@
                 © 2026 BotForge AI by techaitima
             </div>
             <ul class="footer__links">
-                <li><a href="#" class="footer__link">О проекте</a></li>
-                <li><a href="#" class="footer__link">Документация</a></li>
-                <li><a href="#" class="footer__link">Поддержка</a></li>
+                <li><a href="index.html" class="footer__link">О проекте</a></li>
+                <li><a href="pages/docs.html" class="footer__link">Документация</a></li>
+                <li><a href="pages/contact.html" class="footer__link">Поддержка</a></li>
             </ul>
             <div class="footer__social">
-                <a href="#" class="footer__social-link" aria-label="Telegram">Telegram</a>
-                <a href="#" class="footer__social-link" aria-label="GitHub">GitHub</a>
+                <a href="https://t.me/techaitima" class="footer__social-link" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a href="https://github.com/techaitima" class="footer__social-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:techaitima@users.noreply.github.com" class="footer__social-link">Email</a>
             </div>
         </div>
     </footer>
